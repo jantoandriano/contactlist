@@ -29,10 +29,6 @@
     gap: 1rem;
 }
 
-@media only screen and (min-width: 540px) {
-   
-}
-
 @media only screen and (min-width: 1024px) {
     .contact__item__name svg{
         width: 40px;
