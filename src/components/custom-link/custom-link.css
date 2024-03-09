@@ -1,0 +1,17 @@
+.link__container {
+    padding: 0.2rem;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid black;
+}
+
+.link__item {
+    text-decoration: none;
+    color: black;
+}
+
+.active {
+    color: red;
+    background-color: #15F5BA;
+}

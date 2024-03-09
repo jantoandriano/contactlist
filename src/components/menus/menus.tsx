@@ -1,14 +1,12 @@
 import "./menus.css"
+import { CustomLink } from "../custom-link/custom-link";
 
 export const Menus = () => {
+
     return (
         <div className="menus__container">
-            <div className="menus__item">
-                All
-            </div>
-            <div className="menus__item">
-                Favorites
-            </div>
+            <CustomLink to="/">All</CustomLink>
+            <CustomLink to="favorites">Favorites</CustomLink>
         </div>
     )
 }
