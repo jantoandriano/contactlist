@@ -1,0 +1,33 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
+
+.nav__menucontainer {
+    position: relative;
+}
+
+.nav__title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+@media only screen and (min-width: 540px) {
+    .nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav svg {
+        display: none;
+    }
+
+    .nav__title {
+        font-size: 2rem;
+    }
+}

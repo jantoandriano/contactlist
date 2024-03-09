@@ -1,0 +1,18 @@
+.btn__container {
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+    border-radius: 0.5rem;
+    color: #fff;
+}
+
+.btn__container_delete {
+    background-color: #FF004D;
+}
+
+.btn__container_edit {
+    background-color: #836FFF;
+}
+
+.btn__label {
+    font-size: 1rem;
+    font-weight: 500;
+}
