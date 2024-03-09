@@ -1,9 +1,9 @@
 import { ContactList } from "../components/contact-list/contact-list"
 
-export const HomePage = () => {
+export const FavoritesPage = () => {
     return (
         <>
-            <ContactList />
+            <ContactList/>
         </>
     )
 }

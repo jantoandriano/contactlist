@@ -3,7 +3,7 @@ import { Card } from "../card/card"
 import { Loader } from "../loader/loader"
 import "./contact-list.css"
 
-export const ContactList = () => {
+export const FavoriteList = () => {
     const { data: contacts, isLoading } = useGetContacts()
 
     if (isLoading && !contacts) {
@@ -14,7 +14,7 @@ export const ContactList = () => {
 
     return (
         <>
-            <div className="contact__list__container">
+            <div className="favorite__list__container">
                 {contacts?.data.map(contact => {
                     return (
                         <Card {...contact} key={contact.id} />

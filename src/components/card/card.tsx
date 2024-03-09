@@ -2,13 +2,13 @@ import React from 'react';
 import { Button } from '../button/button';
 import { FaRegStar } from "react-icons/fa";
 import { Contact } from "../../services/useGetContacts"
-import "./contact-list-item.css"
+import "./card.css"
 
-export const ContactListItem: React.FC<Contact> = ({ first_name, last_name, job, description }) => {
+export const Card: React.FC<Contact> = ({ first_name, last_name, job, description }) => {
     return (
-        <div className="contact__item__container">
-            <div className='contact__item__bio'>
-                <div className='contact__item__name'>
+        <div className="card__item__container">
+            <div className='card__item__bio'>
+                <div className='card__item__name'>
                     <FaRegStar size={30} />
                     <p>
                         {first_name} {last_name}
@@ -22,7 +22,7 @@ export const ContactListItem: React.FC<Contact> = ({ first_name, last_name, job,
                 </p>
             </div>
 
-            <div className='contact__item__btn__group'>
+            <div className='card__item__btn__group'>
                 <Button label="Edit" type="edit" />
                 <Button label="Delete" type="delete" />
             </div>
