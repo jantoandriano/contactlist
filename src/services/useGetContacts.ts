@@ -19,7 +19,7 @@ type Response = {
 
 
 const fetchContacts = async (): Promise<Response> => {
-    const response = await axios.get(`/contacts`)
+    const response = await axios.get(`http://localhost:3000/api/contacts`)
     return response.data
 }
 
