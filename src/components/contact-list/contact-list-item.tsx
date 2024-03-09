@@ -1,24 +1,17 @@
 import React from 'react';
-import "./contact-list-item.css"
 import { Button } from '../button/button';
 import { FaRegStar } from "react-icons/fa";
+import { Contact } from "../../services/useGetContacts"
+import "./contact-list-item.css"
 
-
-interface Props {
-    id: number;
-    name: string;
-    job: string;
-    description: string;
-}
-
-export const ContactListItem: React.FC<Props> = ({  name, job, description }) => {
+export const ContactListItem: React.FC<Contact> = ({ first_name, last_name, job, description }) => {
     return (
         <div className="contact__item__container">
             <div className='contact__item__bio'>
                 <div className='contact__item__name'>
                     <FaRegStar size={30} />
                     <p>
-                        {name}
+                        {first_name} {last_name}
                     </p>
                 </div>
                 <p>

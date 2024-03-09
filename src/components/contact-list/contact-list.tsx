@@ -6,58 +6,39 @@ export const ContactList = () => {
     const contacts = [
         {
             id: 1,
-            name: "Anya",
-            job: "artis",
+            first_name: "Anya",
+            last_name: "Geraldine",
+            job: "Artis",
             description: "penyanyi, artis, dan model"
         },
         {
             id: 2,
-            name: "Anya",
-            job: "artis",
+            first_name: "Anya",
+            last_name: "Geraldine",
+            job: "Artis",
             description: "penyanyi, artis, dan model"
         },
         {
             id: 3,
-            name: "Anya",
-            job: "artis",
+            first_name: "Anya",
+            last_name: "Geraldine",
+            job: "Artis",
             description: "penyanyi, artis, dan model"
         },
         {
             id: 4,
-            name: "Anya",
-            job: "artis",
+            first_name: "Anya",
+            last_name: "Geraldine",
+            job: "Artis",
             description: "penyanyi, artis, dan model"
         },
         {
             id: 5,
-            name: "Anya",
-            job: "artis",
+            first_name: "Anya",
+            last_name: "Geraldine",
+            job: "Artis",
             description: "penyanyi, artis, dan model"
         },
-        {
-            id: 6,
-            name: "Anya",
-            job: "artis",
-            description: "penyanyi, artis, dan model"
-        },
-        {
-            id: 7,
-            name: "Anya",
-            job: "artis",
-            description: "penyanyi, artis, dan model"
-        },
-        {
-            id: 8,
-            name: "Anya",
-            job: "artis",
-            description: "penyanyi, artis, dan model"
-        },
-        {
-            id: 9,
-            name: "Anya",
-            job: "artis",
-            description: "penyanyi, artis, dan model"
-        }
     ]
     return (
         <>
