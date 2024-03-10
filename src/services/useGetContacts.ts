@@ -9,7 +9,7 @@ export interface Contact {
     description: string;
 }
 
-type Contacts = ReadonlyArray<Contact>
+type Contacts = Array<Contact>
 
 type Response = {
     statusCode: number;
