@@ -1,0 +1,37 @@
+.empty__state__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    text-align: center;
+}
+
+.empty__state__message {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.empty__state__action {
+    padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+    border-radius: 0.5rem;
+    width: 100px;
+    background-color: #222831;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.6rem;
+}
+
+.empty__state__action a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+@media only screen and (min-width: 540px) {
+    .empty__state__container {
+        margin-top: 6rem;
+    }
+
+}
