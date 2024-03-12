@@ -1,0 +1,15 @@
+.prompt__btn__group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.prompt__btn {
+    padding: 5px 10px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}

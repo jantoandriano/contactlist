@@ -1,15 +1,22 @@
-import React from 'react';
-import { Button } from '../button/button';
-import { FaRegStar } from "react-icons/fa";
+import { FaStar, FaRegStar } from "react-icons/fa";
 import { Contact } from "../../services/useGetContacts"
+import { Button } from "../button/button";
 import "./card.css"
 
-export const Card: React.FC<Contact> = ({ first_name, last_name, job, description }) => {
+type Props = {
+    contact: Contact;
+    onDelete: () => void;
+    onEdit: (id: number) => void;
+    onSelect: (contact: any) => void;
+}
+
+export const Card: React.FC<Props> = ({ contact, onDelete, onEdit, onSelect }) => {
+    const { id, first_name, last_name, job, description, favorite } = contact
     return (
         <div className="card__item__container">
             <div className='card__item__bio'>
                 <div className='card__item__name'>
-                    <FaRegStar size={30} />
+                    {favorite ? <FaStar size={30} onClick={() => onSelect(contact)} /> : <FaRegStar size={30} onClick={() => onSelect(contact)} />}
                     <p>
                         {first_name} {last_name}
                     </p>
@@ -23,8 +30,8 @@ export const Card: React.FC<Contact> = ({ first_name, last_name, job, descriptio
             </div>
 
             <div className='card__item__btn__group'>
-                <Button label="Edit" type="edit" />
-                <Button label="Delete" type="delete" />
+                <Button label="Edit" type="edit" onClick={() => onEdit(id)} />
+                <Button label="Delete" type="delete" onClick={onDelete} />
             </div>
         </div>
     )

@@ -6,7 +6,7 @@ export const Menus = () => {
     return (
         <div className="menus__container">
             <CustomLink to="/">All</CustomLink>
-            <CustomLink to="favorites">Favorites</CustomLink>
+            <CustomLink to="/favorites">Favorites</CustomLink>
         </div>
     )
 }

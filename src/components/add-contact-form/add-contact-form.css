@@ -1,0 +1,26 @@
+.form__item+.form__item {
+    margin-top: 1rem;
+}
+
+.form__item label,
+.form__item input,
+.form__item button {
+    width: 100%;
+    display: block;
+}
+
+.button__submit {
+    padding: 5px 10px;
+    background-color: #211951;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (min-width: 540px) {
+    form {
+        margin: 0 3rem 0 3rem;
+    }
+}
