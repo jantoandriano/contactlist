@@ -9,16 +9,16 @@ export type Item = {
 
 type Items = Array<Item>;
 
-export const filterData = (items: Items | undefined, query: string) => {
-    if (items === undefined || !items.length) {
-        return []
+export function filterData(array: Items, query: string) {
+    if (array) {
+        const searchTerms = query.toLowerCase().split(' ');
+
+        return array.filter(item => {
+            return searchTerms.every(term =>
+                Object.values(item).some(value =>
+                    typeof value === 'string' && value.toLowerCase().includes(term)
+                )
+            );
+        });
     }
-
-    query = query.toLowerCase();
-    return items.filter(item =>
-        item.first_name.split(' ').some(word =>
-            word.toLowerCase().startsWith(query)
-        )
-    );
-
 }

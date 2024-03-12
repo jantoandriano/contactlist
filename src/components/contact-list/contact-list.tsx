@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Contact, useGetContacts } from "../../services/useGetContacts"
 import { Loader } from "../loader/loader"
 import "./contact-list.css"
@@ -21,9 +21,10 @@ export const ContactList: React.FC<Props> = ({ query, onToast }) => {
     const { data, isLoading } = useGetContacts()
     const dispatch = useFavoritesDispatch()
     const { mutate } = useDeleteContact()
+
+    const [openPrompt, setOpenPrompt] = useState(false)
     const filteredData = filterData(data?.data, query)
 
-    const [openPrompt, setOpenPrompt] = useState(false);
 
     const onClick = (id: number) => {
         navigate(`/edit/${id}`)
@@ -49,7 +50,7 @@ export const ContactList: React.FC<Props> = ({ query, onToast }) => {
             payload: contact,
         })
         onToast(`${contact.first_name} ${contact.last_name} Add to Favorite`)
-    }
+    }    
 
 
     if (isLoading) {
