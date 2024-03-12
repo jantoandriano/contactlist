@@ -4,6 +4,7 @@ import App from './App.tsx'
 import "./main.css"
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { BrowserRouter } from "react-router-dom";
+import { FavoritesProvider } from './reducers/favorites.tsx';
 
 const queryClient = new QueryClient();
 
@@ -11,7 +12,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <App />
+        <FavoritesProvider>
+          <App />
+        </FavoritesProvider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>,
