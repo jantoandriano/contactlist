@@ -1,16 +1,13 @@
-import { useQuery } from '@tanstack/react-query';
+import {  useQuery } from '@tanstack/react-query';
 import axios from 'axios'
 
-export interface Contact {
+export type Contact = {
     id: number
     first_name: string;
     last_name: string;
     job: string;
     description: string;
-}
-
-type Params = {
-    id: string;
+    favorite: boolean;
 }
 
 type Response = {
@@ -19,16 +16,19 @@ type Response = {
     data: Contact
 }
 
+export interface PboHeaderQuery {
+    id: string;
+}
 
-const fetchContact = async (params: Params): Promise<Response> => {
-    const { id } = params
-    const response = await axios.get(`/contact/${id}`)
+
+const fetchContact = async (id: string): Promise<Response> => {
+    const response = await axios.get(`http://localhost:3000/api/contacts/${id}`)
     return response.data
 }
 
-export const useGetContact = (params: Params) => {
+export const useGetContact = (id: string) => {
     return useQuery({
-        queryKey: ['contact', 'detail'],
-        queryFn: () => fetchContact(params),
+        queryKey: ['contact', 'list', id],
+        queryFn: () => fetchContact(id)
     })
 }

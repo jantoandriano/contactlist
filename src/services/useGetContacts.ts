@@ -1,15 +1,16 @@
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios'
 
-export interface Contact {
+export type Contact = {
     id: number
     first_name: string;
     last_name: string;
     job: string;
     description: string;
+    favorite: boolean;
 }
 
-type Contacts = Array<Contact>
+export type Contacts = Array<Contact>
 
 type Response = {
     statusCode: number;
@@ -27,5 +28,18 @@ export const useGetContacts = () => {
     return useQuery({
         queryKey: ['contact', 'list'],
         queryFn: () => fetchContacts(),
+        select: (data) => {
+            const contacts = data.data.map(val => {
+                return ({
+                    ...val,
+                    favorite: false
+                })
+            })
+            return {
+                data: contacts,
+                message: data.message,
+                statusCode: data.statusCode,
+            }
+        }
     })
 }
