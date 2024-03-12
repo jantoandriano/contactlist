@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Contact, useGetContacts } from "../../services/useGetContacts"
+import { Contact, Contacts, useGetContacts } from "../../services/useGetContacts"
 import { Loader } from "../loader/loader"
 import "./contact-list.css"
 import { filterData } from "../../helper"
@@ -23,7 +23,7 @@ export const ContactList: React.FC<Props> = ({ query, onToast }) => {
     const { mutate } = useDeleteContact()
 
     const [openPrompt, setOpenPrompt] = useState(false)
-    const filteredData = filterData(data?.data, query)
+    const filteredData = filterData(data?.data as Contacts, query)
 
 
     const onClick = (id: number) => {
