@@ -9,7 +9,9 @@ import { useToast } from "../helper/useToast"
 
 export const HomePage = () => {
     const [input, setInput] = useState("")
-    const { toasts, removeToast, onToast} = useToast()
+    const [orderBy, setOrderBy] = useState('desc')
+
+    const { toasts, removeToast, onToast } = useToast()
 
     const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         setInput(event.target.value)
@@ -20,7 +22,7 @@ export const HomePage = () => {
             <Layout title="Contact List">
                 <SearchInput input={input} onChange={onChangeInput} />
                 <Menus />
-                <ContactList query={input} onToast={onToast} />
+                <ContactList query={input} orderBy={orderBy} setOrderBy={setOrderBy} onToast={onToast} />
                 <FloatButton />
                 <ToastList data={toasts} position="top-right" removeToast={removeToast} />
             </Layout>

@@ -22,3 +22,23 @@ export function filterData(array: Items, query: string) {
         });
     }
 }
+
+export function sortData(array: Items, type: string) {
+    if (array) {
+        return array.sort((a, b) => {
+            let fa = a.first_name.toLowerCase(),
+                fb = b.first_name.toLowerCase();
+
+            if (type === 'asc') {
+                if (fa < fb) {
+                    return -1;
+                }
+            } else {
+                if (fa > fb) {
+                    return 1;
+                }
+            }
+            return 0;
+        });
+    }
+}
