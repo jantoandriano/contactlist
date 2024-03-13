@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Contact, Contacts, useGetContacts } from "../../services/useGetContacts"
 import { Loader } from "../loader/loader"
 import "./contact-list.css"
@@ -24,21 +24,11 @@ export const ContactList: React.FC<Props> = ({ query, onToast, orderBy, setOrder
     const { data, isLoading } = useGetContacts()
     const dispatch = useFavoritesDispatch()
     const { mutate } = useDeleteContact()
-    const filteredData = filterData(data?.data as Contacts, query)
 
     const [openPrompt, setOpenPrompt] = useState(false)
-    const [contacts, setContacts] = useState(filteredData)
+    const sortedData = sortData(data?.data as Contacts, orderBy);
+    const contacts = filterData(sortedData as Contacts, query)
 
-    useEffect(() => {
-        const sortedData = () => {
-
-            const temp = sortData(filteredData as Contacts, orderBy);
-            setContacts(temp)
-
-        }
-        sortedData()
-
-    }, [orderBy, data])
 
     const onOrderBy = () => {
         if (orderBy === 'asc') {
@@ -87,7 +77,6 @@ export const ContactList: React.FC<Props> = ({ query, onToast, orderBy, setOrder
             <EmptyState message="You haven't added any contact" path="/" />
         )
     }
-
 
     return (
         <>
